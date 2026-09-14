@@ -1,0 +1,37 @@
+---
+import Header from "./Header.astro"
+import Footer from "./Footer.astro"
+import { Font } from "astro:assets";
+
+import "../styles/global.css"
+
+
+const {title, headerTheme, footerTheme} = Astro.props
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" href="/favicon.ico" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title + " - SMHDESIGN"}</title>
+            <Font cssVariable="--futura" />
+
+	</head>
+	<body>
+        <Header theme={headerTheme} heading={title}/>
+		<slot/>
+        <Footer theme={footerTheme}/>
+	</body>
+</html>
+
+
+<style>
+    body{
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+justify-content: space-between;    }
+</style>

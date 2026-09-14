@@ -1,17 +1,30 @@
 ---
-
+import MainLayout  from "../Components/MainLayout.astro";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+
+<MainLayout title="Frontpage" headerTheme="yellow" footerTheme="red">
+	
+	<main>
+	<section id="hero">
+		<img src="../../public/" alt="">
+	</section>
+	<section id="intro">
+
+	</section>
+	<section id="skills">
+
+	</section>
+	<section id="teasers">
+
+	</section>
+	</main>
+
+
+</MainLayout>
+
+<style>
+
+
+
+</style>

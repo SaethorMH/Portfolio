@@ -1,0 +1,77 @@
+--- 
+import Logo  from "./Logo.astro";
+const { heading, theme } = Astro.props;
+---
+<header>
+    <!-- <logo>
+        <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 216.89 315.97">
+  <path d="M212.17,36.4L36.4,212.17c-48.53-48.54-48.53-127.23,0-175.76,48.55-48.54,127.23-48.54,175.77-.01Z" />
+  <path d="M210.92,229.8c-5.84,18.2-15.98,35.31-30.43,49.76-48.55,48.55-127.23,48.55-175.77.01L180.49,103.8c15.57,15.57,26.15,34.25,31.72,54.04,6.64,23.53,6.21,48.63-1.29,71.96Z" />
+</svg>
+    </logo> -->
+    
+        <Logo theme={theme} height="4rem"/>
+        <h2>{heading}</h2>
+   
+    
+    <nav>
+        <a href="/">Frontpage</a>
+        <a href="/Works">Works</a>
+        <a href="/Contact">Contact</a>
+    </nav>
+</header>
+<warning>
+    <p>Website is Still in Development - Some Features and Content may be Missing</p>
+</warning>
+
+
+
+<style define:vars={{theme:`var(--${theme})`}}>
+    warning{
+        border: var(--yellow) 0.5rem dashed;
+        background-color: var(--orange);
+        text-align: center;
+        font-weight: 900;
+    }
+
+
+
+    header{
+        position: sticky;
+        border: 0.2rem var(--theme) solid;
+        height:5rem;
+        display: flex;
+        flex-direction: row;
+        color: var(--textColor);
+        background-color: var(--bgColor);
+        align-items: center;
+        justify-content: space-between;
+        margin: 0 5rem;
+    }
+    
+    div{
+        display: flex;
+    }
+
+    nav{
+        display: flex;
+        gap: 1vw;
+        margin-right: 2rem;
+    }
+    a{
+        background-color: var(--theme);
+        text-decoration: none;
+        border: 0.2rem solid var(--theme);
+        color: var(--textColor);
+        padding: 0.5rem;
+        width: 8rem;
+        text-align: center;
+        font-weight: 800;
+        transition: 0.2s all ease-in-out;
+    }
+    
+    a:hover{
+        background-color: var(--bgColor);
+        scale: 1.01;
+    }
+</style>

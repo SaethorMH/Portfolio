@@ -1,0 +1,41 @@
+---
+import { navigate } from "astro:transitions/client";
+
+const {height, theme} = Astro.props;
+
+
+---
+ <!-- <logo> -->
+        <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 216.89 315.97">
+  <path d="M212.17,36.4L36.4,212.17c-48.53-48.54-48.53-127.23,0-175.76,48.55-48.54,127.23-48.54,175.77-.01Z" />
+  <path d="M210.92,229.8c-5.84,18.2-15.98,35.31-30.43,49.76-48.55,48.55-127.23,48.55-175.77.01L180.49,103.8c15.57,15.57,26.15,34.25,31.72,54.04,6.64,23.53,6.21,48.63-1.29,71.96Z" />
+</svg>
+    <!-- </logo> -->
+
+<style define:vars={{ height, theme: `var(--${theme})` }}>
+    /* logo{
+        padding: 0 2rem;
+        height: 100%;
+        
+        place-content: center;
+        
+    } */
+    svg{
+        cursor: pointer;
+        height: var(--height);
+        transition: 0.3s ease all;
+        place-self: center;
+        padding: 0.5rem;
+        
+
+    }
+    path{
+        fill: var(--theme);
+    }
+    svg:hover{
+        scale: 1.1;
+    }
+</style>
+<script>
+document.querySelector("svg")?.addEventListener("click", () => location.href = "/")
+</script>

@@ -1,0 +1,45 @@
+@layer reset, global,  components, utilities;
+
+@layer reset {
+  * {
+    margin: 0;
+    padding: 0px;
+  }
+  img {
+    display: block;
+    width: 100%;
+  }
+}
+@layer global {
+  :root {
+    --textColor: #0e0801;
+    /* --bgColor: #efeeef; */
+    --bgColor: #efeeef;
+    --red: #d93829;
+    --blue: #23518c;
+    --yellow: #f2be5c;
+    --green: #7ca668;
+    --orange: #f27c38;
+  }
+  html {
+    background-color: var(--bgColor);
+    color: var(--textColor);
+    font-family: var(--futura), sans-serif, cursive;
+  }
+}
+@layer animations {
+  :has(img) {
+    overflow: hidden;
+  }
+  img {
+    animation: fadeInRight 1s ease-out infinite;
+  }
+  @keyframes fadeInRight {
+    from {
+      left: 100px;
+    }
+    to {
+      left: 0;
+    }
+  }
+}
