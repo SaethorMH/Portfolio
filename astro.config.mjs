@@ -1,5 +1,20 @@
-// @ts-check
-import { defineConfig } from 'astro/config';
+import { defineConfig, fontProviders } from "astro/config";
 
-// https://astro.build/config
-export default defineConfig({});
+export default defineConfig({
+  fonts: [
+    {
+      provider: fontProviders.local(),
+      name: "Futura",
+      cssVariable: "--futura",
+      options: {
+        variants: [
+          {
+            src: ["./src/assets/fonts/FuturaLT.woff2"],
+            weight: "normal",
+            style: "normal",
+          },
+        ],
+      },
+    },
+  ],
+});
