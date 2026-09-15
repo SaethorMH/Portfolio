@@ -28,8 +28,11 @@ const { heading, theme } = Astro.props;
 
 <style define:vars={{theme:`var(--${theme})`}}>
     warning{
-        border: var(--yellow) 0.5rem dashed;
+        position: sticky;
+        top:5.4rem;
+        z-index: 19;
         background-color: var(--orange);
+        border: var(--textColor) solid 0.2rem;
         text-align: center;
         font-weight: 900;
     }
@@ -38,6 +41,8 @@ const { heading, theme } = Astro.props;
 
     header{
         position: sticky;
+        top: 0;
+        z-index: 20;
         border: 0.2rem var(--theme) solid;
         height:5rem;
         display: flex;

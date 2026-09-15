@@ -8,6 +8,7 @@
   img {
     display: block;
     width: 100%;
+    position: relative;
   }
 }
 @layer global {
@@ -22,24 +23,49 @@
     --orange: #f27c38;
   }
   html {
-    background-color: var(--bgColor);
+    /* background-color: var(--bgColor); */
+    background-image:
+      linear-gradient(#ffffff80),
+      repeating-linear-gradient(
+        270deg,
+        #ffffff00,
+        #ffffff00 5rem,
+        var(--blue) 5rem,
+        var(--blue) 5.2rem
+      ),
+      repeating-linear-gradient(
+        180deg,
+        var(--bgColor),
+        var(--bgColor) 5rem,
+        var(--blue) 5rem,
+        var(--blue) 5.2rem
+      );
+
     color: var(--textColor);
     font-family: var(--futura), sans-serif, cursive;
   }
+  h1 {
+    font-weight: 900;
+  }
 }
 @layer animations {
-  :has(img) {
+  /* :has(img) {
+    overflow: hidden;
+  } */
+  section:has(img) {
     overflow: hidden;
   }
   img {
-    animation: fadeInRight 1s ease-out infinite;
+    animation: fadeInRight 1s ease-out;
   }
   @keyframes fadeInRight {
     from {
-      left: 100px;
+      opacity: 0;
+      right: 100px;
     }
     to {
-      left: 0;
+      opacity: 1;
+      right: 0;
     }
   }
 }
