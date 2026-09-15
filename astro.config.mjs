@@ -16,5 +16,19 @@ export default defineConfig({
         ],
       },
     },
+    {
+      provider: fontProviders.local(),
+      name: "Bauhaus",
+      cssVariable: "--bauhaus",
+      options: {
+        variants: [
+          {
+            src: ["./src/assets/fonts/Bauhaus93Regular.ttf"],
+            weight: "normal",
+            style: "normal",
+          },
+        ],
+      },
+    },
   ],
 });
