@@ -1,6 +1,7 @@
 import { defineConfig, fontProviders } from "astro/config";
 
 export default defineConfig({
+  site: 'https://smhdesign.dk/',
   fonts: [
     {
       provider: fontProviders.local(),
